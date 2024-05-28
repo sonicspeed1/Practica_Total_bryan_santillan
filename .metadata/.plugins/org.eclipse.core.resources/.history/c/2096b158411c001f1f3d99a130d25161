@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"   %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CarpiCool</title>
+<link href="stylesb.css"  rel="stylesheet">
+</head>
+<body>
+    <div class="imagen">
+        <div class="contenido">
+            <header class="cuadro">
+                <h1 class=" titulo"> CARPICOOl</h1>
+            </header>
+            <nav >   
+                <ul class="do">
+                <li class="option"> <a href="mercado.jsp" class="lor">Mercado</a></li>
+                <li class="option"> <a href="cat.jsp" class="lor">Categoria</a></li>
+                 <li class="option"> <a href="login.jsp" class="lor">Login</a></li>
+                </ul>
+            </nav>
+            </div>
+            <div>
+            <p>Bienvenido a la página número uno de carpinteria:
+            "Artesanía en Madera, Calidad que Perdura"
+"Transformando Madera en Obras de Arte"
+"Tradición y Excelencia en Carpintería"
+"Innovación y Maestría en Cada Corte"
+"Creando Espacios con Madera y Pasión"
+"Carpintería de Confianza, Resultados Extraordinarios"
+"Dando Vida a la Madera, Dando Vida a Tu Hogar"
+"Tu Visión, Nuestra Madera"
+"Maestros de la Madera, Artesanos de Tu Hogar"
+"La Belleza de la Madera, la Precisión de la Artesanía"</p>
+            
+            </div>
+        </div>
+        <footer class="footer"> Para mas información llamar al numero: 023213123213</footer>
+</body>
+</html>

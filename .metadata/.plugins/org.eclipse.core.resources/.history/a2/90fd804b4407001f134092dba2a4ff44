@@ -1,0 +1,76 @@
+@charset "ISO-8859-1";
+.imagen {
+    background: grey; 
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    filter: saturate(50%) brightness(110%) contrast(90%);
+}
+.contenido {
+    padding: 20px; 
+}
+.cuadro{  
+    width: 1980px;
+    height: 100px;
+    background: rgb(166, 193, 166);
+    display: block;
+    background-position: center;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid black;  
+}
+.titulo{
+    text-align: center;
+    color: darkblue;
+    font-family: 'Street Artist', cursive;
+    font-weight: bold;
+    font-size: 50px;
+}
+.cuadro:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); 
+}
+.do{
+    list-style-type: none;
+}
+.option{
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+}
+.mensaje{
+    display: none;
+    margin-top: 10px;
+}
+.lor{
+    background: red;
+    border: 1px solid blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20;
+}
+.mensaje:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lor:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); 
+}
+.cuadro2{    
+    width: 400px;
+    height: 500px;
+    background: yellow;
+    border: 2px solid red; 
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 98%;
+  }
+.opt{
+    display: inline-block;
+    position: relative;
+    margin-top: 15px;
+}

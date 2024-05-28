@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"import="com.producto.negocio.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+// Obtener los nuevos valores del producto del formulario
+clsproducto n=new clsproducto();
+int id = Integer.parseInt(request.getParameter("cod"));
+int id2 = Integer.parseInt(request.getParameter("cod"));
+String nombre = request.getParameter("nombre");
+int cantidad = Integer.parseInt(request.getParameter("cantidad"));
+double precio = Double.parseDouble(request.getParameter("precio"));
+String  foto = request.getParameter("foto");
+// Actualizar el producto en la base de datos
+
+out.print(id);
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actualizar Producto</title>
+</head>
+<body>
+    <% out.print(resultado); %>
+</body>
+</html>
+
+</body>
+</html>

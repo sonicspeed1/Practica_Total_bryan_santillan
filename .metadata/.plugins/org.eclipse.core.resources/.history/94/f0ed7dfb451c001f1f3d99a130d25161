@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ingreso Producto</title>
+<link href="styles.css", rel="stylesheet">
+</head>
+<body>
+<div class="imagen">
+        <div class="contenido">
+          <header class="cuadro">
+                <h1 class=" titulo"> CARPICOOl</h1>
+            </header>
+          <div class="cuadro2">  
+          <h2> Registro del producto</h2>
+          <form action="respuesta.jsp" method="post">
+        <label class="opt">Codigo: <input type="text" name="rCodigo"></label>
+        <label class="opt">Categoria: <input type="text" name="rCategoria"></label>
+        <label class="opt">Nombre: <input type="text" name="rNombre"></label>
+        <label class="opt">Cantidad:<input type="text" name="rCantidad"></label>
+        <label class="opt">Precio:<input type="text" name="rPrecio"></label>
+        <label class="opt">Foto: <input type="file" name="rFoto" accept=".jpg, .jpeg, .png"  /></label>
+        <input type="submit" value="Guardar"/>
+        <input type="reset" value="Cancelar"/>
+        </form>
+        </div>
+        </div>
+        </div>
+</body>
+</html>

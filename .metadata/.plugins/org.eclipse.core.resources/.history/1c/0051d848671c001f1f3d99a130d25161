@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="com.producto.negocio.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mercado</title>
+<link href="style.css", rel="stylesheet">
+</head>
+<body>
+<div class="imagen">
+        <div class="contenido">
+          <header class="cuadro">
+                <h1 class=" titulo"> CARPICOOl</h1>
+            </header>
+       
+        <%producto p=new producto();
+        out.print(p.consultarTodovendedor());
+        String productId = request.getParameter("cod");
+        %>
+        
+        </div>
+        </div>     
+        <footer class="footer">Para más información llamar al número: 023213123213</footer>
+</body>
+</html>

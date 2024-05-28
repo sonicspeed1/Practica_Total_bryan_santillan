@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="com.producto.negocio.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Respuesta</title>
+</head>
+<body>
+<%String rcodigo=request.getParameter("rCodigo");
+        String rCategoria=request.getParameter("rCategoria");
+        String rnombre=request.getParameter("rnombre");
+        String rCantidad=request.getParameter("rCantidad");
+        String rPrecio=request.getParameter("rPrecio");
+        String rFoto=request.getParameter("rFoto");
+        	producto p=new producto();
+        	String a =p.ingresarProducto(Integer.parseInt(rcodigo),Integer.parseInt(rCategoria),rnombre,Integer.parseInt(rCantidad), 
+        			Double.parseDouble(rPrecio),rFoto);
+        	out.print(a);
+        %>
+</body>
+</html>

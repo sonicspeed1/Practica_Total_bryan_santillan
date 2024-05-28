@@ -1,0 +1,9 @@
+127.0.0.1 - - [23/Apr/2024:16:04:22 -0500] "GET / HTTP/1.1" 404 688
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:16:04:44 -0500] "GET /proyect/pagina.jsp HTTP/1.1" 200 2630
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:16:04:45 -0500] "GET /proyect/estilos.css HTTP/1.1" 200 1602
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:16:04:45 -0500] "GET /proyect/media/cuidado-de-herramientas-carpinteria.jpg HTTP/1.1" 200 217577
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:16:04:45 -0500] "GET /favicon.ico HTTP/1.1" 404 771
+127.0.0.1 - - [23/Apr/2024:16:48:50 -0500] "GET / HTTP/1.1" 404 688
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:16:48:58 -0500] "GET /proyect/pagina.jsp HTTP/1.1" 200 2630
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:16:49:00 -0500] "GET /favicon.ico HTTP/1.1" 404 771
+0:0:0:0:0:0:0:1 - - [23/Apr/2024:16:50:26 -0500] "POST /proyect/respuesta.jsp HTTP/1.1" 200 142

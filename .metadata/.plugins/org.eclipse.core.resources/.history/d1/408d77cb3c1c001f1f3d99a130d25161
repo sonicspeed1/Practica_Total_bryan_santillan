@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Categoria</title>
+<link href="stylesb.css", rel="stylesheet">
+</head>
+<body>
+<div class="imagen">
+        <div class="contenido">
+          <header class="cuadro">
+                <h1 class=" titulo"> CARPICOOl</h1>
+            </header>
+        <form action="categoria.jsp" method="post">
+          <label> Pongala la categoria:<input type="text" name="rcat"></label>
+          <input type="submit" value="Ingresar">
+          <input type="reset" value="Cancelar">
+        </form>
+        </div>
+        </div>
+</body>
+</html>

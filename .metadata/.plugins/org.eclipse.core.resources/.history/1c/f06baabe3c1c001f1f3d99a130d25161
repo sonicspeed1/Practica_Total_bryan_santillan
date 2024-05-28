@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="com.producto.negocio.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insersion</title>
+</head>
+<body>
+<%
+usuario u=new usuario();
+String rnombre = request.getParameter("txtNombre");
+String rcorreo= request.getParameter("txtCorreo");
+String rtipo=request.getParameter("perfil");
+out.print(u.ingreso_usuario(rnombre, rcorreo,Integer.parseInt(rtipo)));
+
+%>
+</body>
+</html>

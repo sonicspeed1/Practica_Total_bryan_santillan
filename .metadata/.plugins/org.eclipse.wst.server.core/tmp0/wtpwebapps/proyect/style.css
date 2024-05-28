@@ -1,0 +1,124 @@
+@charset "ISO-8859-1";
+.imagen {
+    background-image: url('media/cuidado-de-herramientas-carpinteria.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    filter: saturate(50%) brightness(110%) contrast(90%);
+}
+.contenido {
+    padding: 20px; 
+}
+.cuadro{  
+   width: 100%;
+    max-width: 1980px; 
+    height: 10vh; 
+    max-height: 200px;
+    background: rgb(166, 193, 166);
+    display: block;
+    background-position: center;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid black;
+    position: relative;
+   
+}
+.titulo{
+    text-align: center;
+    color: white;
+    font-family: 'Street Artist', cursive;
+    font-weight: bold;
+    font-size: 30px;
+}
+.cuadro:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); 
+}
+.do{
+    list-style-type: none;
+    background: red;
+    border: 1px solid blue;
+}
+.option{
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+         
+}
+
+.lor{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20;
+}
+
+.lor:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); 
+}
+.cuadro2{  
+	display:block;
+	margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    background: yellow;
+    border: 2px solid red; 
+}
+.tuk{
+	margin: 0 auto;
+}
+.cuadro1, .cuadro2,.tuk{
+    margin-top: 20px; 
+}
+.tm{
+	color: darkblue;
+	display: flex;
+	flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.tt{
+	display:flex;
+	justify-content: center; 
+}
+
+
+.footer {
+    background-color: #8a3bbe;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 97%;
+    max-width: 1980px; 
+    position: fixed;
+    bottom: 0;
+}
+.opt{
+    display: inline-block;
+    position: relative;
+    margin-top: 15px;
+}
+
+.reg{
+	background-color: white;
+	height:10px;
+	width: 10px;
+	border: 1px solid black;
+	margin: 0 auto;
+}
+
+.aside-float {
+    float: left;
+    margin-right: 20px; 
+    background: green;
+        width: 100px;
+    border: 1px solid blue;
+    color: white;
+     margin-left: 20px; 
+}
+
+.text-content {
+    overflow: hidden;
+    background: lightblue;
+    width: 500px;
+    border: 1px solid blue;
+    color: #400000;
+}
+

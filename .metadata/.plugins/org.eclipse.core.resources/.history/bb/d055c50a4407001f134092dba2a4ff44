@@ -1,0 +1,82 @@
+package com.producto.negocio;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.producto.datos.Conexion;
+
+public class producto {
+	public String ingresarProducto(int id, int cat,String nombre, int cantidad, double precio, 
+			String directorio)
+			{
+			String result="";
+			Conexion con=new Conexion();
+			String sql="INSERT INTO tb_producto (id_prod,id_cat,nombre,cantidad,precio,foto)VALUES(?,?,?,?,?,?)";
+			PreparedStatement pr = null;
+			try{
+			pr=con.getConexion().prepareStatement(sql);
+			pr.setInt(1,id);
+			pr.setInt(2,cat);
+			pr.setString(3, nombre);
+			pr.setInt(4, cantidad);
+			pr.setDouble(5, precio);
+			File fichero=new File(directorio);
+			FileInputStream streamEntrada=new FileInputStream(fichero);
+			pr.setBinaryStream(6, streamEntrada,(int)fichero.length());
+			if(pr.executeUpdate()==1)
+			{
+			result="Inserción correcta";
+			}
+			else
+			{
+			result="Error en inserción";
+			}
+			}
+			catch(Exception ex)
+			{
+			result=ex.getMessage();
+			}
+			finally
+			{
+			try
+			{
+			pr.close();
+			con.getConexion().close();
+			}
+			catch(Exception ex)
+			{
+			System.out.print(ex.getMessage());
+			}
+			}
+			return result;
+			}
+	public String consultarTodo()
+	{
+	String sql="SELECT * FROM tb_producto ORDER BY id_pr";
+	Conexion con=new Conexion();
+	String tabla="<table border=2><th>ID</th><th>Producto</th><th>Cantidad</th><th>Precio</th>";
+	ResultSet rs=null;
+	rs=con.Consulta(sql);
+	try {
+	while(rs.next())
+	{
+	tabla+="<tr><td>"+rs.getInt(1)+"</td>"
+	+ "<td>"+rs.getString(3)+"</td>"
+	+ "<td>"+rs.getInt(4)+"</td>"
+	+ "<td>"+rs.getDouble(5)+"</td>"
+	+ "</td></tr>";
+	}
+	} catch (SQLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+	System.out.print(e.getMessage());
+	}
+	tabla+="</table>";
+	return tabla;
+	}
+
+
+}

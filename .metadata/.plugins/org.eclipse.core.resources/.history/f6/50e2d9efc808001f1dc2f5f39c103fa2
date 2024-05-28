@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="com.producto.negocio.*"%>
+ 
+<%
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Modificar Producto</h2>
+    <form action="ActualizarProducto.jsp" method="post">
+        <input type="hidden" name="id" value="<%= id %>">
+        <!-- Aquí van los campos para modificar el producto -->
+        Nombre: <input type="text" name="nombre" value="<%= productoDetalles.getNombre() %>"><br>
+        Cantidad: <input type="number" name="cantidad" value="<%= productoDetalles.getCantidad() %>"><br>
+        Precio: <input type="text" name="precio" value="<%= productoDetalles.getPrecio() %>"><br>
+        <input type="submit" value="Actualizar">
+    </form>
+</body>
+</html>

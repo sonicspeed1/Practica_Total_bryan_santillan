@@ -1,0 +1,66 @@
+package com.producto.negocio;
+import java.io.File;
+import java.io.FileInputStream;
+import java.sql.PreparedStatement;
+
+import com.producto.datos.Conexion;
+
+public class clsproducto {
+	public String modificarProducto(int id, int cat, String nombre, int cantidad, double precio, String directorio) {
+	    String result = "";
+	    Conexion con = new Conexion();
+	    String sql = "UPDATE tb_producto SET id_cat=?, nombre=?, cantidad=?, precio=?, foto=? WHERE id_prod=?";
+	    PreparedStatement pr = null;
+	    try {
+	        pr = con.getConexion().prepareStatement(sql);
+	        pr.setInt(1, cat);
+	        pr.setString(2, nombre);
+	        pr.setInt(3, cantidad);
+	        pr.setDouble(4, precio);
+	        File fichero = new File(directorio);
+	        FileInputStream streamEntrada = new FileInputStream(fichero);
+	        pr.setBinaryStream(5, streamEntrada, (int) fichero.length());
+	        pr.setInt(6, id);
+	        if (pr.executeUpdate() == 1) {
+	            result = "Modificación correcta";
+	        } else {
+	            result = "Error en la modificación";
+	        }
+	    } catch (Exception ex) {
+	        result = ex.getMessage();
+	    } finally {
+	        try {
+	            pr.close();
+	            con.getConexion().close();
+	        } catch (Exception ex) {
+	            System.out.print(ex.getMessage());
+	        }
+	    }
+	    return result;
+	}
+	public String eliminarProducto(int id) {
+	    String result = "";
+	    Conexion con = new Conexion();
+	    String sql = "DELETE FROM tb_producto WHERE id_prod=?";
+	    PreparedStatement pr = null;
+	    try {
+	        pr = con.getConexion().prepareStatement(sql);
+	        pr.setInt(1, id);
+	        if (pr.executeUpdate() == 1) {
+	            result = "Eliminación correcta";
+	        } else {
+	            result = "Error en la eliminación";
+	        }
+	    } catch (Exception ex) {
+	        result = ex.getMessage();
+	    } finally {
+	        try {
+	            pr.close();
+	            con.getConexion().close();
+	        } catch (Exception ex) {
+	            System.out.print(ex.getMessage());
+	        }
+	    }
+	    return result;
+	}
+}

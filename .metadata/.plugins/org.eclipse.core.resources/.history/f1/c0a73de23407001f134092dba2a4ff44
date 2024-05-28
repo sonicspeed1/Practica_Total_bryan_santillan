@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="com.producto.negocio.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Respuesta</title>
+</head>
+<body>
+<% producto n=new producto();
+   String t= n.consultarTodo();
+		   out.print(t);%>
+</body>
+</html>

@@ -1,0 +1,79 @@
+@charset "ISO-8859-1";
+.imagen {
+    background-image: url('media/cuidado-de-herramientas-carpinteria.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    filter: saturate(50%) brightness(110%) contrast(90%);
+}
+.contenido {
+    padding: 20px; 
+}
+.cuadro{  
+    width: 100%;
+    max-width: 1980px; 
+    height: 10vh; 
+    max-height: 200px;
+    background: rgb(166, 193, 166);
+    display: block;
+    background-position: center;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid black;  
+}
+.titulo{
+    text-align: center;
+    color: white;
+    font-family: 'Street Artist', cursive;
+    font-weight: bold;
+    font-size: 30px;
+}
+.cuadro:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); 
+}
+.do{
+    list-style-type: none;
+    background: red;
+    border: 1px solid blue;
+}
+.option{
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+}
+.mensaje{
+    display: none;
+}
+.lor{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20;
+}
+.mensaje:target {
+    display: block;
+     margin-top: 10px;
+     margin: 0 auto;
+    
+}
+.lor:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); 
+}
+.cuadro2{    
+    width: 400px;
+    height: 500px;
+    background: yellow;
+    border: 2px solid red; 
+}
+
+footer {
+    background-color: #8a3bbe;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+.opt{
+    display: inline-block;
+    position: relative;
+    margin-top: 15px;
+}

@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="com.producto.negocio.*" %>
+<%
+    String rCodigo = request.getParameter("rCodigo");
+    String rCategoria = request.getParameter("rCategoria");
+    String rNombre = request.getParameter("rNombre");
+    String rCantidad = request.getParameter("rCantidad");
+    String rPrecio = request.getParameter("rPrecio");
+    String rFoto = request.getParameter("rFoto");
+
+    // Crear instancia del producto y llamar al método para insertar el producto
+    producto p = new producto();
+    String resultado = p.ingresarProducto(Integer.parseInt(rCodigo), Integer.parseInt(rCategoria), rNombre, Integer.parseInt(rCantidad), Double.parseDouble(rPrecio), "C:/" + rFoto);
+
+    // Preparar el mensaje para mostrar al usuario
+    String mensaje;
+    boolean exito;
+    if ("success".equals(resultado)) {
+        mensaje = "Inserción correcta del registro.";
+        exito = true;
+    } else {
+        mensaje = "Datos incorrectos. Vuelva a intentarlo.";
+        exito = false;
+    }
+
+    // Si hay error, redirigir a ingreso.jsp con mensaje de error
+    if (!exito) {
+        response.sendRedirect("ingreso.jsp?error=" + java.net.URLEncoder.encode(mensaje, "UTF-8"));
+    }
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Resultado de Ingreso</title>
+<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<% if (exito) { %>
+<div class="imagen">
+    <div class="contenido">
+        <header class="cuadro">
+            <h1 class="titulo">CARPICOOL</h1>
+        </header>
+        <div class="cuadro2">
+            <h2>Resultado del Registro del Producto</h2>
+            <p><%= mensaje %></p>
+            <a href="IngresoProducto.jsp">Volver al formulario</a>
+        </div>
+    </div>
+</div>
+<% } %>
+</body>
+</html>

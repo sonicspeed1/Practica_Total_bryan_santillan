@@ -1,0 +1,116 @@
+package com.producto.negocio;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.producto.datos.Conexion;
+
+public class usuario {
+	private String login;
+	private String clave;
+	private int perfil;
+	private String nombre;
+	public boolean verificarUsuario(String nlogin, String nclave)
+	{
+	boolean respuesta=false;
+	String sentencia= "Select * from tb_usuario where login_us='"+nlogin+"' and clave_us='"+nclave+"';";
+	try
+	{
+	ResultSet rs;
+	Conexion clsCon=new Conexion();
+	rs=clsCon.Consulta(sentencia);
+	if(rs.next())
+	{
+	respuesta=true;
+	this.setLogin(nlogin);
+	this.setClave(nclave);
+	this.setPerfil(rs.getInt(6));
+	this.setNombre(rs.getString(2));
+	}
+	else
+	{
+	respuesta=false;
+	rs.close();
+	}
+	}
+	catch(Exception ex)
+	{
+	System.out.println( ex.getMessage());
+	}
+	return respuesta;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getClave() {
+		return clave;
+	}
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
+	public int getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(int perfil) {
+		this.perfil = perfil;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String mostrarMenu(int nperfil)
+	{
+	String menu="<ul>";
+	String sql="SELECT * FROM tb_pagina pag, tb_perfil per, tb_perpag pper "
+	+"WHERE pag.id_pag=pper.id_pag AND pper.id_per=per.id_per AND pper.id_per= "+nperfil;
+	Conexion con = new Conexion();
+	ResultSet rs=null;
+	try
+	{
+	rs=con.Consulta(sql);
+	while(rs.next())
+	{
+	menu+=
+			"<li style=\"background: white;\"><a href="+rs.getString(3)+" accesskey="+rs.getInt(1)+">"+rs.getString(2)+
+	"</a></li>";
+	}
+	menu+="</ul>";
+	}
+	catch(SQLException e)
+	{
+	System.out.print(e.getMessage());
+	}
+	return menu;
+	}
+	public List<String> obtenerPerfiles() {
+        List<String> perfiles = new ArrayList<>();
+        String sentencia = "select * from tb_perfil;";
+        ResultSet rs;
+        Conexion clsCon = new Conexion();
+        rs = clsCon.Consulta(sentencia);
+        try {
+            while (rs.next()) {
+                perfiles.add(rs.getString(2)); // Asumiendo que la segunda columna es la que necesitas
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return perfiles;
+    }
+}

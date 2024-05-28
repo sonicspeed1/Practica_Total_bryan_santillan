@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="com.producto.negocio.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Categoria</title>
+<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="imagen">
+    <div class="contenido">
+        <header class="cuadro">
+            <h1 class=" titulo"> CARPICOOl</h1>
+        </header>
+        <form action="cat.jsp" method="post">
+            <label> Pongala la categoria:<input type="text" name="rcat"></label>
+            <input type="submit" value="Ingresar">
+            <input type="reset" value="Cancelar">
+        </form>
+        <a href="#m1"></a>
+    </div>
+</div>
+</body>
+</html>
+<div id="m1">
+<%
+
+String rcat = request.getParameter("rcat");
+if (rcat != null && !rcat.isEmpty()) {
+    try {
+        int id = Integer.parseInt(rcat);
+        producto p = new producto();
+        out.print(p.buscarProductoCategoria(id));
+    } catch (NumberFormatException e) {
+        out.print("El valor ingresado no es un número válido.");
+    }
+} else {
+    out.print("Por favor, ingrese un valor para la categoría.");
+}
+%>
+</div>

@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="com.producto.negocio.*"%>
+
+<%
+usuario u=new usuario();
+String cont1 = request.getParameter("txtcont1");
+String cont2 = request.getParameter("txtcont2");
+String cont3 = request.getParameter("txtcont3");
+if(cont3.equals(cont2)){
+    out.print("Correcto");
+} else {
+	out.print("Incorrecto");
+}
+%>
